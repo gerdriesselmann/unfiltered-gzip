@@ -1,0 +1,14 @@
+This is a GZip reponse writer for Unfiltered (https://github.com/n8han/Unfiltered).
+
+It can be used as a drop in replacement for ResponseString, like this:
+
+object Echo extends unfiltered.filter.Plan {
+  def intent = {
+      case req @ Path(Seg(p :: Nil)) => GZipResponseString(req, p)
+  }
+}
+
+The GZipResponseString will check if the client supports gzip encoding and
+will send the required headers.
+
+
