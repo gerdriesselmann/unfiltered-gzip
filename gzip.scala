@@ -33,8 +33,6 @@ object AcceptsEncoding {
 
 /**
  * GZip a response, if possible
- *
- * Taken from here: https://github.com/gerdriesselmann/unfiltered-gzip
  */
 case class GZipResponseString[T](request: HttpRequest[T], content: String) extends Responder[Any] {
     /**
