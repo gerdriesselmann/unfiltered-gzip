@@ -1,6 +1,6 @@
 This is a GZip utility for Unfiltered (https://github.com/n8han/Unfiltered).
 
-It offers a GZip intent you can use liek this:
+It offers a GZip intent you can use like this:
 
 object Echo extends unfiltered.filter.Plan {
   def intent = GZipIntent {
@@ -8,7 +8,7 @@ object Echo extends unfiltered.filter.Plan {
   }
 }
 
-Additionally, GZipReponseString can be used as a drop in replacement for ResponseString, like this:
+Additionally, GZipReponseString can be used as a replacement for ResponseString, like this:
 
 object Echo extends unfiltered.filter.Plan {
   def intent = {
@@ -16,7 +16,7 @@ object Echo extends unfiltered.filter.Plan {
   }
 }
 
-In both cases, it will be checked, if the client supports gzip encoding, and the required headers 
-will be sent.
+Client's AcceptEncoding headers will always be respected, and Content-Encoding headers will be 
+automatically sent.
 
 
